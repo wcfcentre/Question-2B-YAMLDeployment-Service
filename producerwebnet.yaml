@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: producerwebnet
+spec:
+ selector:
+   matchLabels:
+     app: producerwebnet
+ template:
+   metadata:
+     labels:
+       app: producerwebnet
+   spec:
+     containers:
+     - name: producerwebnet
+       image: w8873docker/producerwebnet      
+       ports:
+       - containerPort: 8080
